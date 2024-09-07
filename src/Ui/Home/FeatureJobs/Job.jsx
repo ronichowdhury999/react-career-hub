@@ -6,7 +6,7 @@ const Job = ({ job }) => {
     const { logo, job_title, job_type, company_name, remote_or_onsite, location, salary, id} = job
     return (
         <div>
-            <div className="border border-gray-500 p-6">
+            <div className="border border-purple-200 rounded-lg p-6">
                 <img className="w-16 md:w-20 h-16" src={logo} alt="logo" />
                 <h2 className="py-2 text-xl font-bold">{job_title}</h2>
                 <p>{company_name}</p>
