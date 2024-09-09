@@ -11,7 +11,7 @@ const Job = ({ job }) => {
                 <h2 className="py-2 text-xl font-bold">{job_title}</h2>
                 <p>{company_name}</p>
                 <div className="flex items-center gap-2 py-2">
-                    <button     >{job_type}</button>
+                    <button className="py-1 px-2 rounded-md border text-purple-600 border-purple-600"  >{job_type}</button>
                     <button className="py-1 px-2 rounded-md border text-purple-600 border-purple-600">{remote_or_onsite}</button>
                 </div>
                 <div className="flex gap-1 my-2 items-center">

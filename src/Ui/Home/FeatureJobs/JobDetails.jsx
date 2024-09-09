@@ -11,7 +11,9 @@ const JobDetails = () => {
   const jobData = jobs?.find(job => job.id === idIn)
   return (
     <div className="max-w-[1200px] mx-auto p-6">
+      <section className="bg-red-400 border border-red-500">
       <h1 className="text-3xl text-center py-16 font-bold">Job Details</h1>
+      </section>
       <div className="grid md:grid-cols-4 gap-4">
         <div className="md:col-span-3">
           <p className="my-4"><span className="font-bold">Job Description:</span>  A UI/UX (User Interface/User Experience) designer is responsible for designing and creating engaging and effective interfaces for software and web applications. This includes designing the layout, visual design, and interactivity of the user interface.

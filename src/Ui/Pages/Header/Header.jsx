@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom"
+import './header.css'
 
 const Header = () => {
     const links = <>
@@ -9,8 +10,8 @@ const Header = () => {
         <li><NavLink to={'/blogs'}>Blogs</NavLink></li>
     </>
     return (
-        <header className="max-w-[1200px] mx-auto">
-            <div className="navbar bg-base-100">
+        <header className=" my-header-bg sticky top-0 z-50">
+            <nav className="navbar max-w-[1200px] mx-auto ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -45,7 +46,7 @@ const Header = () => {
                 <div className="navbar-end">
                     <a className="btn">Apply</a>
                 </div>
-            </div>
+            </nav>
         </header>
     )
 }

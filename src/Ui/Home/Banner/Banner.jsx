@@ -2,7 +2,9 @@ import React from 'react'
 
 const Banner = () => {
   return (
-    <div className="max-w-[1200px] mx-auto">Banner</div>
+    <div className="">
+      <h1>The closer my section for today </h1>
+    </div>
   )
 }
 
