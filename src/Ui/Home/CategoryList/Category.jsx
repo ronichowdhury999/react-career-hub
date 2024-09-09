@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Category = ({category}) => {
-    console.log(category);
     const {category_name,availability,logo}= category
     return (
         <div>

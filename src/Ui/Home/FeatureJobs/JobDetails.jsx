@@ -9,7 +9,7 @@ const JobDetails = ({children}) => {
   const jobs = useLoaderData()
   const { id } = useParams()
   const idIn = parseInt(id)
-  const jobData = jobs?.find(job => job.id === idIn)
+  const jobData = jobs?.find(job => job?.id === idIn)
   return (
     <div>
       <SubHeader data={children}>
