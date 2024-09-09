@@ -1,12 +1,14 @@
-import React from 'react'
 import SubHeader from '../SubHeader/SubHeader'
+import PropTypes from 'prop-types';
 
-const Jobs = ({children}) => {
+const Jobs = ({ children }) => {
   return (
     <div>
-       <SubHeader data={children}></SubHeader>
+      <SubHeader data={children}></SubHeader>
     </div>
   )
 }
-
+Jobs.propTypes = {
+  children: PropTypes.string.isRequired,
+}
 export default Jobs
