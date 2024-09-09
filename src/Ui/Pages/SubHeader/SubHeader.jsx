@@ -1,7 +1,5 @@
-
-
+import PropTypes from 'prop-types';
 const SubHeader = ({ data }) => {
-    console.log(data);
     return (
         <div>
             <div className='my-header-bg relative'>
@@ -10,6 +8,9 @@ const SubHeader = ({ data }) => {
             </div>
         </div>
     )
+}
+SubHeader.propTypes = {
+    data: PropTypes.string.isRequired
 }
 
 export default SubHeader
