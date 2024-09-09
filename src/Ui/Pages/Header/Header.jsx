@@ -3,11 +3,11 @@ import './header.css'
 
 const Header = () => {
     const links = <>
-        <li><NavLink to={'/'}>Home</NavLink></li>
-        <li><NavLink to={'/statistics'}>Statistics</NavLink></li>
-        <li><NavLink to={'/jobs'}>Jobs</NavLink></li>
-        <li><NavLink to={'/applied'}>Applied Jobs</NavLink></li>
-        <li><NavLink to={'/blogs'}>Blogs</NavLink></li>
+        <li><NavLink className={({ isPending, isActive }) => isPending ? 'pending' : isActive ? 'rounded-md text-white bg-gradient-to-r from-indigo-500 to-purple-500' : ''} to={'/'}>Home</NavLink></li>
+        <li><NavLink className={({ isPending, isActive }) => isPending ? 'pending' : isActive ? 'rounded-md text-white bg-gradient-to-r from-indigo-500 to-purple-500' : ''} to={'/statistics'}>Statistics</NavLink></li>
+        <li><NavLink className={({ isPending, isActive }) => isPending ? 'pending' : isActive ? 'rounded-md text-white bg-gradient-to-r from-indigo-500 to-purple-500' : ''} to={'/jobs'}>Jobs</NavLink></li>
+        <li><NavLink className={({ isPending, isActive }) => isPending ? 'pending' : isActive ? 'rounded-md text-white bg-gradient-to-r from-indigo-500 to-purple-500' : ''} to={'/applied'}>Applied Jobs</NavLink></li>
+        <li><NavLink className={({ isPending, isActive }) => isPending ? 'pending' : isActive ? 'rounded-md text-white bg-gradient-to-r from-indigo-500 to-purple-500' : ''} to={'/blogs'}>Blogs</NavLink></li>
     </>
     return (
         <header className=" my-header-bg sticky top-0 z-50">
