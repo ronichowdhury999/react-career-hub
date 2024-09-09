@@ -11,7 +11,7 @@ const FeatureJobs = () => {
             .then(data => setJobs(data));
     }, [])
     return (
-        <div>
+        <div className="max-w-[1200px] mx-auto">
             <div className="text-center mt-14">
                 <h1 className="text-4xl font-bold mb-4">Featured Jobs</h1>
                 <p>Explore thousands of job opportunities with all the information you need. Its your future</p>

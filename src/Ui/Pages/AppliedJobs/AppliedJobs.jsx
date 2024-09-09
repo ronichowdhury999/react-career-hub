@@ -1,6 +1,10 @@
-const AppliedJobs = () => {
+import SubHeader from "../SubHeader/SubHeader"
+
+const AppliedJobs = ({children}) => {
   return (
-    <div>ApliedJobs</div>
+    <div className="">
+    <SubHeader data={children}></SubHeader>
+    </div>
   )
 }
 

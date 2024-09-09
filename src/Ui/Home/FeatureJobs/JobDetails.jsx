@@ -3,17 +3,18 @@ import { TfiLocationPin } from "react-icons/tfi";
 import { FiPhone } from "react-icons/fi";
 import { GrMoney } from "react-icons/gr";
 import { HiOutlineMail } from "react-icons/hi";
+import SubHeader from "../../Pages/SubHeader/SubHeader";
 
-const JobDetails = () => {
+const JobDetails = ({children}) => {
   const jobs = useLoaderData()
   const { id } = useParams()
   const idIn = parseInt(id)
   const jobData = jobs?.find(job => job.id === idIn)
   return (
-    <div className="max-w-[1200px] mx-auto p-6">
-      <section className="bg-red-400 border border-red-500">
-      <h1 className="text-3xl text-center py-16 font-bold">Job Details</h1>
-      </section>
+    <div>
+      <SubHeader data={children}>
+      </SubHeader>
+      <div className="max-w-[1200px] mx-auto p-6">
       <div className="grid md:grid-cols-4 gap-4">
         <div className="md:col-span-3">
           <p className="my-4"><span className="font-bold">Job Description:</span>  A UI/UX (User Interface/User Experience) designer is responsible for designing and creating engaging and effective interfaces for software and web applications. This includes designing the layout, visual design, and interactivity of the user interface.
@@ -60,6 +61,7 @@ const JobDetails = () => {
             <button className="py-3 text-white font-semibold px-3 w-full mt-4 rounded-lg bg-gradient-to-br from-blue-500 to-blue-300">Apply Now</button>
         </div>
       </div>
+    </div>
     </div>
   )
 }
