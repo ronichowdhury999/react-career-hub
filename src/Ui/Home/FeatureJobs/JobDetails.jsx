@@ -5,12 +5,22 @@ import { GrMoney } from "react-icons/gr";
 import { HiOutlineMail } from "react-icons/hi";
 import SubHeader from "../../Pages/SubHeader/SubHeader";
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { savaJobApplication } from "../../../Utility/Localstorage";
 
 const JobDetails = ({ children }) => {
   const jobs = useLoaderData()
   const { id } = useParams()
   const idIn = parseInt(id)
   const jobData = jobs && jobs.find(job => job.id == idIn)
+
+
+  const handelApplyJob = () => {
+    savaJobApplication(idIn)
+    toast('You have applied successfully')
+    
+  }
   return (
     <div>
       <SubHeader data={children}>
@@ -59,7 +69,7 @@ const JobDetails = ({ children }) => {
                 </div>
               </div>
             </div>
-            <button className="py-3 text-white font-semibold px-3 w-full mt-4 rounded-lg bg-gradient-to-br from-blue-500 to-blue-300">Apply Now</button>
+            <button onClick={handelApplyJob} className="py-3 text-white font-semibold px-3 w-full mt-4 rounded-lg bg-gradient-to-br from-blue-500 to-blue-300">Apply Now</button>
           </div>
         </div>
       </div>

@@ -21,26 +21,29 @@ const router = createBrowserRouter([
         path: '/',
         element: <Home />
       },
-      {
-        path: '/applied',
-        element: <AppliedJobs>Applied job</AppliedJobs>
-      },
+     
       {
         path: '/blogs',
         element: <Blogs>Blogs</Blogs>
       },
       {
-        path:'/jobs',
-        element:<Jobs>Jobs</Jobs>
+        path: '/jobs',
+        element: <Jobs>Jobs</Jobs>
       },
       {
-        path:'/statistics',
-        element:<Statistics>Statistics</Statistics>
+        path: '/statistics',
+        element: <Statistics>Statistics</Statistics>
+      },
+      {
+        path: '/applied',
+        element: <AppliedJobs>Applied job</AppliedJobs>,
+        loader : ()=> fetch('/jobs.json')  // warning : only load the data you need. do not load all data the data
+
       },
       {
         path: '/jobDetails/:id',
         element: <JobDetails>Job Details</JobDetails>,
-        loader: () => fetch('/jobs.json')
+        loader: () => fetch('/jobs.json') //dot not load all data. load only what you need
       },
     ]
   }

@@ -3,7 +3,7 @@ import { GrMoney } from "react-icons/gr";
 import { Link } from "react-router-dom";
 
 const Job = ({ job }) => {
-    const { logo, job_title, job_type, company_name, remote_or_onsite, location, salary, id} = job
+    const { logo, job_title, job_type, company_name, remote_or_onsite, location, salary, id } = job
     return (
         <div>
             <div className="border border-purple-200 rounded-lg p-6">
@@ -28,5 +28,7 @@ const Job = ({ job }) => {
         </div>
     )
 }
+
+
 
 export default Job
