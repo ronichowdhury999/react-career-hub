@@ -9,6 +9,19 @@ import { GrMoney } from "react-icons/gr";
 const AppliedJobs = ({ children }) => {
   const jobs = useLoaderData();
   const [appliedJobs, setAppliedJobs] = useState([]);
+  const [displayJobs ,setDisplayJobs]= useState([]);
+
+  const handelJobsFilter = filter =>{
+    if(filter === 'all'){
+      setDisplayJobs(appliedJobs);
+    }else if (filter === 'remote'){
+      const remoteJobs = appliedJobs.filter(job => job.remote_or_onsite === 'Remote')
+      setDisplayJobs(remoteJobs);
+    }else if(filter === 'onsite'){
+      const onsiteJobs = appliedJobs.filter(job => job.remote_or_onsite === 'Onsite')
+      setDisplayJobs(onsiteJobs);
+    }
+  }
 
   useEffect(() => {
     const storedJobIds = getStoredJobApplication();
@@ -21,14 +34,24 @@ const AppliedJobs = ({ children }) => {
         }
       }
       setAppliedJobs(jobsApplied)
+      setDisplayJobs(jobsApplied)
     }
-  }, [])
+  }, [jobs])
   return (
     <div>
       <SubHeader data={children}></SubHeader>
       <div className="max-w-[1000px] mx-auto p-4 md:mt-10">
-        {appliedJobs && appliedJobs.map(job => <div key={job.id}>
-
+        <div className="text-end">
+          <details className="dropdown">
+            <summary className="btn m-1">Filter By</summary>
+            <ul className="menu dropdown-content bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+              <li onClick={()=>handelJobsFilter('all')}><a>All</a></li>
+              <li onClick={()=>handelJobsFilter('remote')}><a>Remote</a></li>
+              <li onClick={()=>handelJobsFilter('onsite')}><a>Onsite</a></li>
+            </ul>
+          </details>
+        </div>
+        {appliedJobs && displayJobs.map(job => <div key={job.id}>
           <div className="md:flex gap-4 my-4 p-6 justify-between items-center border border-my-header-bg rounded-lg">
 
             <div>
